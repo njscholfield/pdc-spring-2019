@@ -7,6 +7,7 @@ li {
 }
 code {
   font-family: Helvetica;
+  text-decoration: underline;
 }
 
 .caption {
@@ -15,7 +16,7 @@ code {
 }
 
 #most_important {
-  background-color: #ccc;
+  background-color: lightGray;
   width: 200px;
   height: 100px;
 }
