@@ -1,10 +1,7 @@
 <nav class="navbar navbar-dark bg-dark navbar-expand-md fixed-top">
   <a class="navbar-brand" href="/">Noah Scholfield</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div id="navbar" class="navbar-collapse collapse justify-content-between">
-    <ul class="nav navbar-nav">
+  <div id="navbar" class="navbar-collapse expand">
+    <ul class="nav navbar-nav flex-row justify-content-between">
       <li id="Home" class="nav-item {% if page.title == 'Home' %}active{% endif %}"><a class="nav-link" href="/">Home</a></li>
       <li id="Contact" class="nav-item {% if page.title == 'Homeworks' %}active{% endif %}"><a class="nav-link" href="/homeworks/">Homeworks</a></li>
       <li id="Experience" class="nav-item {% if page.title == 'Trees in Pittsburgh' %}active{% endif %}"><a class="nav-link" href="/trees/">Trees in Pittsburgh</a></li>
