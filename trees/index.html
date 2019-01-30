@@ -1,48 +1,42 @@
+---
+title: Trees in Pittsburgh
+permalink: /trees/
+---
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset='utf-8' />
-  <title>Trees in Pittsburgh | Noah Scholfield</title>
-  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
-  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
-  <style>
-    body { margin:0; padding:0; }
-    #map { position:absolute; top:0; bottom:0; width:100%; }
-  </style>
-</head>
+  <head>
+    {% include head.html %}
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css" rel="stylesheet" />
+    <link href="trees.css" rel="stylesheet">
+  </head>
 <body>
-
-<div id='map'></div>
-<script>
-mapboxgl.accessToken = 'pk.eyJ1IjoibmpzY2hvbGZpZWxkIiwiYSI6ImNqcmN0ZTZyNzFnM2M0M3A4OTE3dnc2bWIifQ.RXPCNEAOoAl-Aldh-iuEeQ';
-const map = new mapboxgl.Map({
-  container: 'map',
-  style: 'mapbox://styles/njscholfield/cjream41060ct2smdgyccyvra',
-  center: [-79.984326, 40.441071],
-  zoom: 14.0
-});
-
-map.on('click', function(e) {
-  var features = map.queryRenderedFeatures(e.point, {
-    layers: ['tree-dots'] // replace this with the name of the layer
-  });
-  // var features = map.queryRenderedFeatures(e.point);
-
-  if (!features.length) {
-    return;
-  }
-
-  var feature = features[0];
-  var props = feature.properties;
-
-  var popup = new mapboxgl.Popup({ offset: [0, -15] })
-    .setLngLat(feature.geometry.coordinates)
-    .setHTML(`<h3>${props.common_name}</h3><p><strong>Condition:</strong> ${props.condition}</p><p><strong>Diameter:</strong> ${props.diameter_base_height}</p><p><strong>Overall Value:</strong> $${Math.round(props.overall_benefits_dollar_value)}</p>`)
-    .setLngLat(feature.geometry.coordinates)
-    .addTo(map);
-});
-</script>
-
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-4">Trees in Pittsburgh</h1>
+      <p class="lead">By Noah Scholfield</p>
+    </div>
+  </div>
+  <div class="container">
+    <section>
+      <h3 class="text-primary">Heat Map of Trees in Pittsburgh</h3>
+      <div class="map" id='heatmap'></div>
+      <p class="text-muted">Zoom in and click on individual dots to see info about that tree.</p>
+    </section>
+    <section>
+      <h3 class="text-primary">Health of the Trees in Pittsburgh</h3>
+      <div class="map" id="healthmap"></div>
+      <p class="text-muted">Zoom in and click on individual dots to see info about that tree.</p>
+    </section>
+    <hr>
+    <section>
+      <h4>Sources</h4>
+      <ul>
+        <li>Tree Data from <a href="https://data.wprdc.org/dataset/city-trees" target="_blank" rel="noopener noreferrer">Western Pennsylvania Regional Data Center</a></li>
+        <li>Maps created by me using <a href="https://www.mapbox.com/" target="_blank" rel="noopener noreferrer">Mapbox</a></li>
+      </ul>
+    </section>
+  </div>
+  <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js"></script>
+  <script src="mapbox.js"></script>
 </body>
 </html>
