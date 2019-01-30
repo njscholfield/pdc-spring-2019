@@ -35,7 +35,7 @@ map1.on('click', function(e) {
     .setLngLat(feature.geometry.coordinates)
     .addTo(map1);
 });
-
+/*
 const map2 = new mapboxgl.Map({
   container: 'healthmap',
   style: 'mapbox://styles/njscholfield/cjrgw8f1x23yp2sl7qycx50oy',
@@ -70,3 +70,4 @@ map2.on('click', function(e) {
     .setLngLat(feature.geometry.coordinates)
     .addTo(map2);
 });
+*/
