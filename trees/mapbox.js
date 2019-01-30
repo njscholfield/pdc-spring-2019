@@ -1,4 +1,5 @@
 /* global mapboxgl */
+/* eslint no-unused-vars: 0 */
 mapboxgl.accessToken = 'pk.eyJ1IjoibmpzY2hvbGZpZWxkIiwiYSI6ImNqcmN0ZTZyNzFnM2M0M3A4OTE3dnc2bWIifQ.RXPCNEAOoAl-Aldh-iuEeQ';
 const map1 = new mapboxgl.Map({
   container: 'heatmap',
