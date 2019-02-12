@@ -1,0 +1,57 @@
+---
+title: Reply All
+permalink: /emails/
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include head.html %}
+  </head>
+  <body>
+    {% include navbar.html %}
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-4">Reply All</h1>
+        <p class="lead">By Noah Scholfield</p>
+        <p class="lead">The story of the 1,000+ emails 4,000+ of us got on February 10th and 11th</p>
+      </div>
+    </div>
+    <div class="container">
+      <h4 class="text-primary">Introduction</h4>
+      <p>It all started at 10:50PM on Sunday, February 10th when someone's account got hacked and sent out a phishing email to a Pitt Dining email distirbution list with 4,000+ people on it. Soon people realized that they could reply-all to this email and it would go to everyone. This resulted in many memes, social usernames, SoundCloud links, dog pictures, and other messages being sent in a flood of notifications.</p>
+      <h4 class="text-primary">Let me out!</h4>
+      <p>Soon after, people wanted out. But how to get out? Someone offered "help" by telling everyone to reply-all the cryptic messge <code>Force remove-1573AQ</code> to be immediately removed from the mass email. However, this person was just trolling so the tsunami of emails switched from a seemingly university-wide group chat of sorts to email after email of <code>Force remove-1573AQ</code> from people trying to escape the flood of emails. Later someone corrected that person and suggested yet another, more criptic way, to be removed from this snowball of messages.</p>
+      <pre><code>
+      &lt;html&gt;
+        &lt;javascript&gt; rmdir.pittemail&lt;/javascript&gt;
+        &lt;code =stop reciving&gt; &lt;/code&gt;
+        &lt;Front =no&gt; &lt;/Front&gt;
+      &lt;/html&gt;</code></pre>
+      <p>But surprise, surprise, that didn't work either. </p>
+      <h4 class="text-primary">Data</h4>
+      <p>I put all of the email data from the emails that I received into Excel to find out how many people were involved and what they said. Here's what I found.</p>
+      <p>There were a total of 1,104 email received over the roughly 12 hours that this was going on presumably received by the 4,175 people on the distribution list that this was sent to.</p>
+      <div>
+        <a href="https://plot.ly/~njscholfield/4/?share_key=GelSVrKlzcphiBaYUisHB9" target="_blank" title="Email Contents" style="display: block; text-align: center;"><img src="https://plot.ly/~njscholfield/4.png?share_key=GelSVrKlzcphiBaYUisHB9" alt="Email Contents" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+        <script data-plotly="njscholfield:4" sharekey-plotly="GelSVrKlzcphiBaYUisHB9" src="https://plot.ly/embed.js" async></script>
+      </div>
+      <p class="text-muted">This graph shows the number of messages containing the same first line of the message.</p>
+      <p>Turns out lots of people fell for the "Force remove" trick. There were also many people that put both "unsubscribe messages" in the email and hoped for the best which isn't really represented in this graph.</p>
+      <p>I noticed that many people who sent emails had an Outlook App signature which made me wonder what the share iOS vs Android was since the signature includes that info. Of all the emails, roughly half of them had such a signature. Here is the graph showing the OS share based upon the messages that did include the signature.<p>
+      <div>
+        <a href="https://plot.ly/~njscholfield/6/?share_key=sInKWKvRam9Qg0bkw9ONr9" target="_blank" title="Mobile OS Share" style="display: block; text-align: center;"><img src="https://plot.ly/~njscholfield/6.png?share_key=sInKWKvRam9Qg0bkw9ONr9" alt="Mobile OS Share" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+        <script data-plotly="njscholfield:6" sharekey-plotly="sInKWKvRam9Qg0bkw9ONr9" src="https://plot.ly/embed.js" async></script>
+      </div>
+      <p class="text-muted">You can click on the labels on the top right to show or hide that category.</p>
+      <p>This data isn't super accurate because it involved trying to parse the individual messages which was somewhat difficult because they weren't all formatted the same way. And again only about half of the emails included this signature at all so the data isn't fully represenative.</p>
+      <p>So it looks like Outlook was both the winner and loser in all of this mess because it had to handle delivery of all these emails, but it's app got lots of advertisement.</p>
+      <h4 class="text-primary">Resolution</h4>
+      <p>The emails continued to come in until after 10:30AM until a setting on the distribution list was finally changed preventing just anyone from using it to email or reply-all to. Now we just have to wonder if this is going to happen again with a different distribution list, and if anyone will get dining emails anymore since many people filtered them all out to stop their inbox from overflowing.</p>
+      <h4 class="text-primary">Links</h4>
+      <ul>
+        <li>Graphs made using <a href="https://plot.ly/" target="_blank" rel="noreferrer noopener">Plotly</a></li>
+        <li>Raw email spreadsheet on <a href="https://docs.google.com/spreadsheets/d/1GPI2CDkp_iZoYld2tRon1M3U5QsSLJdMcWwTC7oJmq4/edit?usp=sharing" target="_blank" rel="noreferrer noopener">Google Sheets</a></li>
+      </ul>
+    </div>
+  </body>
+</html>
