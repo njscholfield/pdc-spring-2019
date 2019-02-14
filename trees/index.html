@@ -25,6 +25,16 @@ permalink: /trees/
     <section>
       <h3 class="text-primary">Heat Map of Trees in Pittsburgh</h3>
       <div class="map" id='heatmap'></div>
+      <div class="btn-group" role="group" id="filter-buttons">
+        <button class="btn active" data-condition="Excellent">Excellent</button>
+        <button class="btn active" data-condition="Very Good">Very Good</button>
+        <button class="btn active" data-condition="Good">Good</button>
+        <button class="btn active" data-condition="Fair">Fair</button>
+        <button class="btn active" data-condition="Poor">Poor</button>
+        <button class="btn active" data-condition="Critical">Critical</button>
+        <button class="btn active" data-condition="Dead">Dead</button>
+      </div>
+      <button class="btn btn-secondary" id="filter-reset">Reset</button>
       <p class="text-muted">Zoom in and click on individual dots to see info about that tree.</p>
     </section>
     <section>

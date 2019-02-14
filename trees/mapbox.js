@@ -35,3 +35,40 @@ map1.on('click', function(e) {
     .setLngLat(feature.geometry.coordinates)
     .addTo(map1);
 });
+
+const allConditions = []; // array to hold all conditions for easy resetting
+let conditionsToShow = []; // array to hold the conditions to be shown on the map
+
+function filterByCondition(e) {
+  const btn = e.currentTarget;
+  const condition = btn.dataset.condition;
+  if(btn.classList.contains('active')) {
+    const index = conditionsToShow.lastIndexOf(condition); // find the condition in the array
+    conditionsToShow.splice(index, 1); // remove that condtion
+    btn.classList.remove('active');
+  } else {
+    btn.classList.add('active');
+    conditionsToShow.push(condition);
+  }
+  const filter = ['match', ['get', 'condition'], conditionsToShow, true, false];
+  map1.setFilter('tree-heatmap', filter);
+  map1.setFilter('tree-dots', filter);
+}
+const filterBtns = [...document.querySelectorAll('#filter-buttons button')];
+filterBtns.forEach((btn) => {
+  btn.addEventListener('click', filterByCondition);
+  allConditions.push(btn.dataset.condition);
+});
+conditionsToShow = allConditions.slice(); // copy all conditions into conditionToShow to start
+
+// Function that resets the filter to default
+function filterReset() {
+  for(const btn of filterBtns) {
+    btn.classList.add('active');
+  }
+  conditionsToShow = allConditions.slice(); // reset conditionToShow
+  const filter = ['match', ['get', 'condition'], conditionsToShow, true, false];
+  map1.setFilter('tree-heatmap', filter);
+  map1.setFilter('tree-dots', filter);
+}
+document.getElementById('filter-reset').addEventListener('click', filterReset);
