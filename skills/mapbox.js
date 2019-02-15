@@ -1,3 +1,4 @@
+/* global mapboxgl, MapboxGeocoder */
 mapboxgl.accessToken = 'pk.eyJ1IjoibmpzY2hvbGZpZWxkIiwiYSI6ImNqcmN0ZTZyNzFnM2M0M3A4OTE3dnc2bWIifQ.RXPCNEAOoAl-Aldh-iuEeQ';
 const map = new mapboxgl.Map({
   container: 'map',
@@ -20,34 +21,34 @@ map.addControl(new mapboxgl.GeolocateControl({
 
 map.on('load', function() {
   map.addLayer({
-      id: 'points',
-      type: 'circle',
-      source: {
-        type: 'geojson',
-        data: {
-          "type": "FeatureCollection",
-          "features": [{
-            "type": "Feature",
-            "geometry": {
-              "type": "Point",
-              "coordinates": [-77.03238901390978, 38.913188059745586]
-            },
-            "properties": {
-              "title": "Mapbox DC",
-              "icon": "monument"
-            }
-          }, {
-            "type": "Feature",
-            "geometry": {
-              "type": "Point",
-              "coordinates": [-122.414, 37.776]
-            },
-            "properties": {
-              "title": "Mapbox SF",
-              "icon": "harbor"
-            }
-          }]
-        }
+    id: 'points',
+    type: 'circle',
+    source: {
+      type: 'geojson',
+      data: {
+        'type': 'FeatureCollection',
+        'features': [{
+          'type': 'Feature',
+          'geometry': {
+            'type': 'Point',
+            'coordinates': [-77.03238901390978, 38.913188059745586]
+          },
+          'properties': {
+            'title': 'Mapbox DC',
+            'icon': 'monument'
+          }
+        }, {
+          'type': 'Feature',
+          'geometry': {
+            'type': 'Point',
+            'coordinates': [-122.414, 37.776]
+          },
+          'properties': {
+            'title': 'Mapbox SF',
+            'icon': 'harbor'
+          }
+        }]
       }
-  })
-})
+    }
+  });
+});
