@@ -1,0 +1,28 @@
+---
+title: Skills Assignment
+permalink: /skills/
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include head.html %}
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css" rel="stylesheet">
+    <link href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v3.1.0/mapbox-gl-geocoder.css" rel="stylesheet">
+    <link href="skills.css" rel="stylesheet">
+  </head>
+  <body>
+    {% include navbar.html %}
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-4">Skills Assignment</h1>
+        <p class="lead">This is a page for me to play around with stuff for my skills assignment</p>
+      </div>
+    </div>
+    <div class="container">
+      <div id="map"></div>
+    </div>
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v3.1.0/mapbox-gl-geocoder.min.js"></script>
+    <script src="mapbox.js"></script>
+  </body>
+</html>
