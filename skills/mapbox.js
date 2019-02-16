@@ -59,4 +59,4 @@ document.getElementById('js-clear').addEventListener('click', function() {
   points.features = [];
   map.getSource('points').setData(points);
   localStorage.setItem('points', JSON.stringify([]));
-})
+});
