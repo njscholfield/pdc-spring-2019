@@ -7,10 +7,21 @@ const map = new mapboxgl.Map({
   zoom: 14.0
 });
 
+let points = {
+  type: 'FeatureCollection',
+  features: [],
+};
 
-map.addControl(new MapboxGeocoder({
+let savedPoints = localStorage.getItem('points');
+if(savedPoints) {
+  points.features = JSON.parse(savedPoints);
+}
+
+const geocoder = new MapboxGeocoder({
   accessToken: mapboxgl.accessToken
-}));
+});
+
+map.addControl(geocoder);
 map.addControl(new mapboxgl.NavigationControl());
 map.addControl(new mapboxgl.GeolocateControl({
   positionOptions: {
@@ -25,30 +36,27 @@ map.on('load', function() {
     type: 'circle',
     source: {
       type: 'geojson',
-      data: {
-        'type': 'FeatureCollection',
-        'features': [{
-          'type': 'Feature',
-          'geometry': {
-            'type': 'Point',
-            'coordinates': [-77.03238901390978, 38.913188059745586]
-          },
-          'properties': {
-            'title': 'Mapbox DC',
-            'icon': 'monument'
-          }
-        }, {
-          'type': 'Feature',
-          'geometry': {
-            'type': 'Point',
-            'coordinates': [-122.414, 37.776]
-          },
-          'properties': {
-            'title': 'Mapbox SF',
-            'icon': 'harbor'
-          }
-        }]
-      }
+      data: points,
+    },
+    paint: {
+      'circle-radius': 10,
+      'circle-color': '#007cba',
     }
   });
 });
+
+geocoder.on('result', function(e) {
+  const feature = {
+    type: 'Feature',
+    geometry: e.result.geometry
+  };
+  points.features.push(feature);
+  map.getSource('points').setData(points);
+  localStorage.setItem('points', JSON.stringify(points.features));
+});
+
+document.getElementById('js-clear').addEventListener('click', function() {
+  points.features = [];
+  map.getSource('points').setData(points);
+  localStorage.setItem('points', JSON.stringify([]));
+})
