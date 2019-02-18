@@ -40,7 +40,7 @@ map.on('load', function() {
     },
     paint: {
       'circle-radius': 10,
-      'circle-color': '#007cba',
+      'circle-color': ['get', 'color'],
     }
   });
 });
@@ -60,7 +60,9 @@ function addPoint(e) {
   const feature = {
     type: 'Feature',
     properties: {
-      title: e.currentTarget[0].value,
+      title: escapeHtml(e.currentTarget[0].value),
+      description: escapeHtml(e.currentTarget[1].value),
+      color: escapeHtml(e.currentTarget[2].value),
     },
     geometry,
   };
@@ -96,6 +98,14 @@ map.on('click', function(e) {
 
   var popup = new mapboxgl.Popup({ offset: [0, -15] })
     .setLngLat(feature.geometry.coordinates)
-    .setText(feature.properties.title)
+    // .setText(feature.properties.title)
+    .setHTML(`<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`)
     .addTo(map);
 });
+
+// Function from http://shebang.brandonmintern.com/foolproof-html-escaping-in-javascript/
+function escapeHtml(str) {
+  var div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
