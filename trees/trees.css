@@ -5,7 +5,7 @@
 .btn-group {
   background: rgba(0, 0, 0, 0) linear-gradient(to right, #43ac6a, #E99002, #F04124);
 }
-.btn {
+.btn-group .btn {
   background: transparent !important;
 }
 .btn.active {

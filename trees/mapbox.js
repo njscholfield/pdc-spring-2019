@@ -72,3 +72,11 @@ function filterReset() {
   map1.setFilter('tree-dots', filter);
 }
 document.getElementById('filter-reset').addEventListener('click', filterReset);
+
+function toggleHeatmap() {
+  const visibility = map1.getLayoutProperty('tree-heatmap', 'visibility');
+  const [newVisibility, newBtnText] = (visibility === 'visible') ? ['none', 'Show Heatmap'] : ['visible', 'Hide Heatmap'];
+  map1.setLayoutProperty('tree-heatmap', 'visibility', newVisibility);
+  document.getElementById('toggle-heatmap').innerHTML = newBtnText;
+}
+document.getElementById('toggle-heatmap').addEventListener('click', toggleHeatmap);
