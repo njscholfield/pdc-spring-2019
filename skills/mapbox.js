@@ -121,6 +121,7 @@ const stMap = new mapboxgl.Map({
   center: [-98.5795, 39.8384],
   zoom: 3.0
 });
+stMap.addControl(new mapboxgl.NavigationControl());
 
 stMap.on('load', function() {
   stMap.addLayer({
