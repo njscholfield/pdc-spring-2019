@@ -5,3 +5,6 @@
 .modal-backdrop {
   background-color: rgba(22, 22, 22, .6);
 }
+.flag {
+  max-height: 4rem;
+}

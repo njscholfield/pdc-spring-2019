@@ -115,6 +115,59 @@ fetch('states.json')
   .then((response) => response.json())
   .then((data) => stateJSON = data);
 
+// Look up state abbreviation by name
+const stateList = {
+  'Arizona': 'AZ',
+  'Alabama': 'AL',
+  'Alaska':'AK',
+  'Arkansas': 'AR',
+  'California': 'CA',
+  'Colorado': 'CO',
+  'Connecticut': 'CT',
+  'Delaware': 'DE',
+  'Florida': 'FL',
+  'Georgia': 'GA',
+  'Hawaii': 'HI',
+  'Idaho': 'ID',
+  'Illinois': 'IL',
+  'Indiana': 'IN',
+  'Iowa': 'IA',
+  'Kansas': 'KS',
+  'Kentucky': 'KY',
+  'Louisiana': 'LA',
+  'Maine': 'ME',
+  'Maryland': 'MD',
+  'Massachusetts': 'MA',
+  'Michigan': 'MI',
+  'Minnesota': 'MN',
+  'Mississippi': 'MS',
+  'Missouri': 'MO',
+  'Montana': 'MT',
+  'Nebraska': 'NE',
+  'Nevada': 'NV',
+  'New Hampshire': 'NH',
+  'New Jersey': 'NJ',
+  'New Mexico': 'NM',
+  'New York': 'NY',
+  'North Carolina': 'NC',
+  'North Dakota': 'ND',
+  'Ohio': 'OH',
+  'Oklahoma': 'OK',
+  'Oregon': 'OR',
+  'Pennsylvania': 'PA',
+  'Rhode Island': 'RI',
+  'South Carolina': 'SC',
+  'South Dakota': 'SD',
+  'Tennessee': 'TN',
+  'Texas': 'TX',
+  'Utah': 'UT',
+  'Vermont': 'VT',
+  'Virginia': 'VA',
+  'Washington': 'WA',
+  'West Virginia': 'WV',
+  'Wisconsin': 'WI',
+  'Wyoming': 'WY'};
+
 const stMap = new mapboxgl.Map({
   container: 'state-map',
   style: 'mapbox://styles/mapbox/streets-v11',
@@ -134,7 +187,7 @@ stMap.on('load', function() {
     paint: {
       'fill-color': {
         property: 'CENSUSAREA',
-        stops: [[61, '#fff'], [262000, '#f00']]
+        stops: [[61, '#fff'], [262000, '#6495ED']]
       },
       'fill-opacity': 0.7,
       'fill-outline-color': '#333',
@@ -150,12 +203,10 @@ stMap.on('click', function(e) {
   if (!features.length) {
     return;
   }
-
   var feature = features[0];
 
   var popup = new mapboxgl.Popup({ offset: [0, -15] })
     .setLngLat(e.lngLat)
-    // .setText(feature.properties.title)
-    .setHTML(`<h3>${feature.properties.NAME}</h3><p><strong>Census Area:</strong> ${feature.properties.CENSUSAREA}</p>`)
+    .setHTML(`<h3>${feature.properties.NAME}</h3><p><strong>Census Area:</strong> ${feature.properties.CENSUSAREA}</p><img class="flag" src="http://flags.ox3.in/svg/us/${stateList[feature.properties.NAME].toLowerCase()}.svg" alt="${feature.properties.NAME} state flag">`)
     .addTo(stMap);
 });
