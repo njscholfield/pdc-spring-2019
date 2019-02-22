@@ -109,3 +109,52 @@ function escapeHtml(str) {
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 }
+
+let stateJSON;
+fetch('states.json')
+  .then((response) => response.json())
+  .then((data) => stateJSON = data);
+
+const stMap = new mapboxgl.Map({
+  container: 'state-map',
+  style: 'mapbox://styles/mapbox/streets-v11',
+  center: [-98.5795, 39.8384],
+  zoom: 3.0
+});
+
+stMap.on('load', function() {
+  stMap.addLayer({
+    id: 'states',
+    type: 'fill',
+    source: {
+      type: 'geojson',
+      data: stateJSON,
+    },
+    paint: {
+      'fill-color': {
+        property: 'CENSUSAREA',
+        stops: [[61, '#fff'], [262000, '#f00']]
+      },
+      'fill-opacity': 0.7,
+      'fill-outline-color': '#333',
+    }
+  });
+});
+
+stMap.on('click', function(e) {
+  var features = stMap.queryRenderedFeatures(e.point, {
+    layers: ['states']
+  });
+
+  if (!features.length) {
+    return;
+  }
+
+  var feature = features[0];
+
+  var popup = new mapboxgl.Popup({ offset: [0, -15] })
+    .setLngLat(e.lngLat)
+    // .setText(feature.properties.title)
+    .setHTML(`<h3>${feature.properties.NAME}</h3><p><strong>Census Area:</strong> ${feature.properties.CENSUSAREA}</p>`)
+    .addTo(stMap);
+});
