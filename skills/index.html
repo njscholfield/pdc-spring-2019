@@ -15,17 +15,30 @@ permalink: /skills/
     <div class="jumbotron">
       <div class="container">
         <h1 class="display-4">Skills Assignment</h1>
-        <p class="lead">This is a page for me to play around with stuff for my skills assignment</p>
+        <p class="lead">I decided to focus on learning more about <a href="https://www.mapbox.com" target="_blank" rel="noreferrer noopener">Mapbox</a> to make better custom maps</p>
       </div>
     </div>
     <div class="container">
-      <div class="map" id="map"></div>
-      <p class="text-muted">Enter a location to add it to the map.</p>
-      <button class="btn btn-danger" id="js-clear">&times; Clear Locations</button>
+      <section>
+        <h4 class="text-primary">Enhanced Tree Map</h4>
+        <p>First, I added some functionality to the Mapbox map I made for my Pittsburgh Dataset Project about the trees in Pittsburgh. I added some filtering functionality so you can filter the trees in the heatmap by how healthy they are. You can now also hide the heatmap layer if you just want to look at the plain map without any data so you can see the streets and neighborhoods better.</p>
+        <a class="btn btn-success" href="/trees/" target="_blank" rel="noreferrer noopener">Trees Map</a>
+      </section>
       <hr>
-      <h4 class="text-success">States</h4>
-      <div class="map" id="state-map"></div>
-      <p class="text-muted">This is a map of states colored by their census area</p>
+      <section>
+        <h4 class="text-primary">Custom Points</h4>
+        <p>I made this map so that you can add custom points by searching for a location and then putting info about that location into a modal that pops up. You can add a title and description to the location as well as pick a color for its dot on the map. Any points you add will be stored in localStorage, which means they they will be remembered by your browser when you revisit the page.</p>
+        <div class="map" id="map"></div>
+        <p class="text-muted">Enter a location to add it to the map.</p>
+        <button class="btn btn-danger" id="js-clear">&times; Clear Locations</button>
+      </section>
+      <hr>
+      <section>
+        <h4 class="text-primary">States</h4>
+        <p>I made this map to play around with polygons on the map instead of just points. I then colored the states besed upon their "census area" which I think is physical size. I also added popups with the state's name and flag.</p>
+        <div class="map" id="state-map"></div>
+        <p class="text-muted">This is a map of states colored by their census area</p>
+      </section>
     </div>
     <div class="modal-backdrop d-none">
       <div class="modal fade show d-block" tabindex="-1" role="dialog">
