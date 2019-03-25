@@ -1,0 +1,29 @@
+:root {
+  --mint: #86c79d;
+}
+
+.flex {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.col-auto {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+  padding: .5rem;
+}
+
+.reveal img {
+  max-width: 90%;
+  max-height: 90vh !important;
+}
+.reveal h1.text-black {
+  color: var(--mint);
+  text-shadow: #222 3px 3px;
+}
+
+.dim .slide-background-content {
+  opacity: .5;
+}

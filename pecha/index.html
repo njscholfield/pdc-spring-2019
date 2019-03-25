@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>Pivot Tables</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/black.css">
+		<link rel="stylesheet" href="/css/pecha.css">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement('link');
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match(/print-pdf/gi) ? 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/print/pdf.css' : 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/print/paper.css';
+			document.getElementsByTagName('head')[0].appendChild(link);
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Pivot Tables</h1>
+					<p>By Noah Scholfield</h1>
+				</section>
+				<section data-background="img/dog-licenses.png" data-state="dim">
+					<h1 class="text-black">this is a mess</h1>
+					<p style="text-shadow:#222 2px 2px;">Can you tell what the most popular dog name is?</p>
+				</section>
+				<section>
+					<h2>Better?</h2>
+					<table>
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Number</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>BELLA</td>
+								<td>519</td>
+							</tr>
+							<tr>
+								<td>BUDDY</td>
+								<td>385</td>
+							</tr>
+							<tr>
+								<td>LUCY</td>
+								<td>310</td>
+							</tr>
+							<tr>
+								<td>MAX</td>
+								<td>308</td>
+							</tr>
+							<tr>
+								<td>BAILEY</td>
+								<td>283</td>
+							</tr>
+							<tr>
+								<td>MOLLY</td>
+								<td>267</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<h2>What is a Pivot Table?</h2>
+					<ul>
+						<li>a way to analyze data without formulas</li>
+						<li>can summarize data from a spreadsheet</li>
+						<li>automatically updates as you add data<li>
+					</ul>
+				</section>
+				<section>
+					<h2>Ok, how do I make one?</h2>
+					<div class="flex">
+						<div class="col-auto">
+							<img data-src="img/insert-pivot.png">
+						</div>
+						<div class="col-auto">
+							<img data-src="img/select-data.png">
+						</div>
+					</div>
+					<div class="flex">
+						<p class="col-auto">Go to the Insert tab and select PivotTable</p>
+						<p class="col-auto">Then select the data you want</p>
+					</div>
+				</section>
+				<section>
+					<h2>Now make your table</h2>
+					<img data-src="img/pivot-screenshot.png">
+				</section>
+				<section>
+					<h1>Slide 7</h1>
+					<p>This is a test</p>
+				</section>
+				<section>
+					<h1>Slide 8</h1>
+					<a href="https://itunes.apple.com/us/story/id1451646326">App Store story</a>
+				</section>
+				<section>
+					<h1>Slide 9</h1>
+				</section>
+				<section>
+					<h1>Summary</h1>
+					<ul>
+						<li>useful for getting meaning from many rows of data</li>
+						<li>can simplify data to make data vis easier</li>
+					</ul>
+				</section>
+				<section data-background-video="https://media.giphy.com/media/KJ1f5iTl4Oo7u/giphy.mp4" data-background-video-loop>
+				</section>
+			</div>
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/head.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/js/reveal.js"></script>
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({});
+			Reveal.configure({
+				// autoSlide: 20000,
+				slideNumber: true,
+			});
+		</script>
+	</body>
+</html>
