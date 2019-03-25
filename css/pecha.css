@@ -13,9 +13,10 @@
   flex-shrink: 1;
   flex-basis: 0;
   padding: .5rem;
+  margin-left: .5rem !important;
 }
 
-.reveal img {
+.reveal img, iframe {
   max-width: 90%;
   max-height: 90vh !important;
 }

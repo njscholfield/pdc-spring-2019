@@ -26,11 +26,12 @@
 				</section>
 				<section data-background="img/dog-licenses.png" data-state="dim">
 					<h1 class="text-black">this is a mess</h1>
-					<p style="text-shadow:#222 2px 2px;">Can you tell what the most popular dog name is?</p>
+					<p style="text-shadow:#222 2px 2px;">Can you draw any conclusions from this?</p>
 				</section>
 				<section>
 					<h2>Better?</h2>
-					<table>
+					<div class="flex">
+						<table class="col-auto">
 						<thead>
 							<tr>
 								<th>Name</th>
@@ -64,13 +65,15 @@
 							</tr>
 						</tbody>
 					</table>
+						<iframe class="col-auto" width="900" height="800" frameborder="0" scrolling="no" src="https://plot.ly/~njscholfield/8.embed"></iframe>
+					</div>
 				</section>
 				<section>
 					<h2>What is a Pivot Table?</h2>
 					<ul>
 						<li>a way to analyze data without formulas</li>
 						<li>can summarize data from a spreadsheet</li>
-						<li>automatically updates as you add data<li>
+						<li>automatically updates as you add data</li>
 					</ul>
 				</section>
 				<section>
@@ -93,21 +96,47 @@
 					<img data-src="img/pivot-screenshot.png">
 				</section>
 				<section>
-					<h1>Slide 7</h1>
-					<p>This is a test</p>
+					<h2>Ordering and Filtering</h2>
+					<div class="flex">
+						<img class="col-auto" data-src="img/filter.png">
+						<div class="col-auto">
+							<ul>
+								<li>change what column to order your table by</li>
+								<li>exclude any data you don't want</li>
+								<li>filter the results</li>
+							</ul>
+						</div>
+					</div>
 				</section>
 				<section>
-					<h1>Slide 8</h1>
-					<a href="https://itunes.apple.com/us/story/id1451646326">App Store story</a>
+					<h2>Tips</h2>
+					<ul>
+						<li>Play around with different tables</li>
+						<li>Move fields around to change the shape of the table</li>
+						<li>Add formulas to get extra data</li>
+						<li>Don't be scared – the original data isn't changed</li>
+					</ul>
 				</section>
 				<section>
-					<h1>Slide 9</h1>
+					<h2>Examples</h2>
+					<div class="flex">
+						<img class="col-auto" data-src="img/ex1.png">
+						<img class="col-auto" data-src="img/ex2.png">
+						<img class="col-auto" data-src="img/ex3.png">
+					</div>
+					<div class="flex">
+						<p class="col-auto">Name Popularity</p>
+						<p class="col-auto"># Dogs by Zip</p>
+						<p class="col-auto">% of Population</p>
+					</div>
 				</section>
 				<section>
 					<h1>Summary</h1>
 					<ul>
 						<li>useful for getting meaning from many rows of data</li>
-						<li>can simplify data to make data vis easier</li>
+						<li>can simplify data to make data visualization easier</li>
+						<li>quick and easy way to look look for trends or outliers</li>
+						<li>lets you answer questions you have about the data</li>
 					</ul>
 				</section>
 				<section data-background-video="https://media.giphy.com/media/KJ1f5iTl4Oo7u/giphy.mp4" data-background-video-loop>
@@ -122,7 +151,7 @@
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({});
 			Reveal.configure({
-				// autoSlide: 20000,
+				autoSlide: 20000,
 				slideNumber: true,
 			});
 		</script>
